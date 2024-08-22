@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import SalesOverTime from './components/SalesOverTime'; // Import your existing chart component
+import GeographicalDistribution from './components/GeographicalDistribution'; // Import the GeographicalDistribution component
 
-function App() {
+const App = () => {
+  // Sample customer data (you can replace this with your actual data fetching logic later)
+  const customers = [
+    { name: 'Customer 1', latitude: 51.505, longitude: -0.09 },
+    { name: 'Customer 2', latitude: 51.51, longitude: -0.1 },
+    // Add more customers here...
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>E-commerce Data Visualization</h1>
+      <SalesOverTime /> {/* Your existing sales chart */}
+      <GeographicalDistribution customers={customers} /> {/* Add the geographical distribution chart */}
+      {/* Include other charts here */}
     </div>
   );
-}
+};
 
 export default App;
